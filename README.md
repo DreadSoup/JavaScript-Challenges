@@ -1,6 +1,9 @@
 # javaScriptChallenges
 Log of challenges attempted during JavaScript course
 
+fundamentals 1 - challenge 1
+Declare variables for Mark and John, create variables for BMI using the calculation
+
 fundamentals 2 - challenge 1
 Create a function to calculate an average score (value), create a function to check a winner based on average score and other condtions, log the results
 
