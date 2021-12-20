@@ -13,3 +13,8 @@ BONUS - create an array and store the totals
 
 fundamentals 2 - challenge 3
 Create two objects, create a BMI calculator, log who has the higher BMI (include values)
+
+fundamentals 2 - challenge 4
+Create a function to calculate a tip, call the function with data from array, bills
+Use a for loop to create 2 new arrays, tips and totals
+BONUS - create a function to calculate the sum of the totals and tips
