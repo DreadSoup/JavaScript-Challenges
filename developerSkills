@@ -1,0 +1,29 @@
+'use strict';
+
+// Create a function which;
+// - Takes an array
+// - Logs a string '17C in 1 days, 23c in 2 days etc'
+
+// Ask questions - understand the problem
+// - How do we create an array - we know this
+// - How do we create a function - we know this
+// - What type of function - we should use expression function as we are dealing with values
+// - How do we log a string that changes based on array data - we should create a loop that loops through the array, the loop should move systematically through the array updating the string each iteration
+
+// Sub-problems
+// - Create the array - DONE
+// - Create the 'printForecast' function
+// - Create the loop inside the function
+// - Create the string to print
+// - Call and log the function
+
+//const tempData = [17, 21, 23];
+const tempData = [12, 5, -5, 0, 4];
+
+const printForecast = function (arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(`The temperature will be ${arr[i]} ºC in ${arr.indexOf(arr[i]) + 1} day(s)`);
+  }
+};
+
+printForecast(tempData);
