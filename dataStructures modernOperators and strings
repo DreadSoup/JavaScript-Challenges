@@ -86,3 +86,93 @@ printGoals('Buttwad', 'Dillhole');
 // console.log(allPlayers);
 // console.log(players1Final);
 // console.log(team1, draw, team2);
+
+
+// BOTH CHALLENGES 1 and 2 RETRIED AFTER REWATCHING LECTURES AGAIN
+
+'use strict';
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+
+  scorers: {
+    Gnarby: 1,
+    Hummels: 1,
+    Lewandowski: 2,
+  },
+};
+
+const [players1, players2] = game.players;
+const [gk, ...fieldPlayers] = players1;
+const allPlayers = [...players1, ...players2];
+const playersFinal = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+
+const printGoals = function (...playerNames) {
+  for (let i = 0; i < playerNames.length; i++);
+  console.log(playerNames);
+  console.log(`${playerNames.length} Goals were scored!`);
+};
+
+printGoals('buttwad', 'dillhole', 'cuthbert', 'squeeb');
+printGoals(...game.scored);
+printGoals(game.scored, game.scored, game.scored);
+
+team1 < team2 && console.log('Team 1 is more likely to win');
+team2 < team1 && console.log('Team 2 is more likely to win');
+
+const scored = game.scored;
+for (const [goal, scorer] of scored.entries()) {
+  console.log(`Goal ${goal + 1}: ${scorer}`);
+}
+
+const odds = Object.values(game.odds);
+let average = 0;
+for (const odd of odds) average += odd;
+average /= odds.length;
+console.log(average);
+
+for (const [team, odds] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odds of ${teamStr}: ${odds}`);
+}
