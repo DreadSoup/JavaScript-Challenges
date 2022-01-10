@@ -64,21 +64,21 @@ Hummels: 1,
 Lewandowski: 2
 }
 
-dataStructures modernOperators and strings - challenge 3: 
+dataStructures modernOperators and strings - challenge 3: <p>
 Write a program that receives a list of variable names written in underscore_case
-and convert them to camelCase.
+and convert them to camelCase.<p>
 
 The input will come from a textarea inserted into the DOM (see code below to
-insert the elements), and conversion will happen when the button is pressed.
+insert the elements), and conversion will happen when the button is pressed.<p>
 
-Test data (pasted to textarea, including spaces):
+Test data (pasted to textarea, including spaces): <p>
    underscore_case
      first_name
     Some_Variable
     calculate_AGE
   delayed_departure
   
-Should produce this output (5 separate console.log outputs):
+Should produce this output (5 separate console.log outputs): <p>
 underscoreCase ✅
 firstName ✅✅
 someVariable ✅✅✅
