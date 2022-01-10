@@ -64,7 +64,7 @@ Hummels: 1,
 Lewandowski: 2
 }
 
-dataStructures modernOperators and strings - challenge 3:
+dataStructures modernOperators and strings - challenge 3: /b
 Write a program that receives a list of variable names written in underscore_case
 and convert them to camelCase.
 
