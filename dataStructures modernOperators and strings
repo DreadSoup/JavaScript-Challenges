@@ -176,3 +176,23 @@ for (const [team, odds] of Object.entries(game.odds)) {
   const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
   console.log(`Odds of ${teamStr}: ${odds}`);
 }
+
+// Challenge 3
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document
+  .querySelector('button')
+  .addEventListener('click', function (underscoreWord) {
+    underscoreWord = document.querySelector('textarea').value.split('\n');
+    for (const [i, word] of underscoreWord.entries()) {
+      const [firstWord, lastWord] = word.trim().split('_');
+      const camelCase = [
+        firstWord.toLowerCase() +
+          lastWord[0].toUpperCase() +
+          lastWord.toLowerCase().slice(1),
+      ].join();
+      console.log(`${camelCase.padEnd(20)} ${'✅'.repeat(i + 1)}`);
+    }
+  });
