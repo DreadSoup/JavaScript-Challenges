@@ -22,3 +22,18 @@ const checkDogs = function (dogsJulia, dogsKate) {
   });
 };
 checkDogs(dogsJulia1, dogsKate1);
+
+const dogAge1 = [5, 2, 4, 1, 15, 8, 3];
+const dogAge2 = [16, 6, 10, 5, 6, 1, 4];
+
+const calcAverageHumanAge = function (ages) {
+  const averageHumanAge = ages
+    .map(age => (age <= 2 ? age * 2 : 16 + age * 4))
+    .filter(age => age >= 18)
+    .reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
+  return averageHumanAge;
+};
+const avg1 = calcAverageHumanAge(dogAge1);
+const avg2 = calcAverageHumanAge(dogAge2);
+
+console.log(avg1, avg2);
