@@ -1,0 +1,24 @@
+const dogsJulia1 = [3, 5, 2, 12, 7];
+const dogsKate1 = [4, 1, 15, 8, 3];
+const dogsJulia2 = [9, 16, 6, 8, 3];
+const dogsKate2 = [10, 5, 6, 1, 4];
+
+const checkDogs = function (dogsJulia, dogsKate) {
+  const dogsJuliaCorrected = dogsJulia.slice(1, -2);
+  const allDogs = dogsJuliaCorrected.concat(dogsKate);
+  console.log(allDogs);
+  //   console.log(dogsJulia);
+  //   console.log(dogsJuliaCorrected);
+  allDogs.forEach(function (dogAge, i) {
+    if (dogAge < 3) {
+      console.log(
+        `Dog number ${i + 1} is ${dogAge} years old and is still a puppy 🐶`
+      );
+    } else {
+      console.log(
+        `Dog number ${i + 1} is an adult, and is ${dogAge} years old `
+      );
+    }
+  });
+};
+checkDogs(dogsJulia1, dogsKate1);
