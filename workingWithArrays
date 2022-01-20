@@ -37,3 +37,52 @@ const avg1 = calcAverageHumanAge(dogAge1);
 const avg2 = calcAverageHumanAge(dogAge2);
 
 console.log(avg1, avg2);
+
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+// 1.
+dogs.forEach(dog => (dog.recFood = Math.trunc(dog.weight ** 0.75 * 28)));
+console.log(dogs);
+
+// 2.
+const sarahsDog = dogs.find(dog => dog.owners.includes('Sarah'));
+sarahsDog.curFood > sarahsDog.recFood
+  ? console.log(`Sarah's dog is eating too much`)
+  : console.log(`Sarah's dog is eating too litte`);
+
+// 3.
+const ownersEatTooMuch = dogs
+  .filter(dog => dog.curFood > dog.recFood)
+  .flatMap(dog => dog.owners);
+const ownersEatTooLittle = dogs
+  .filter(dog => dog.curFood < dog.recFood)
+  .flatMap(dog => dog.owners);
+console.log(ownersEatTooLittle, ownersEatTooMuch);
+
+// 4.
+console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much`);
+console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little`);
+
+// 5.
+const justRight = dogs.some(dog => dog.curFood === dog.recFood);
+console.log(justRight);
+
+// 6.
+const checkEatingOkay = dog =>
+  dog.curFood > dog.recFood * 0.9 && dog.curFood < dog.recFood * 1.1;
+
+const okay = dogs.some(checkEatingOkay);
+console.log(okay);
+
+// 7.
+const okayArray = dogs.filter(checkEatingOkay);
+console.log(okayArray);
+
+// 8.
+const dogsSorted = dogs.slice().sort((a, b) => a.recFood - b.recFood);
+console.log(dogsSorted);
